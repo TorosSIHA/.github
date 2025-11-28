@@ -2,7 +2,7 @@
 
 Bu depo, TEKNOFEST 2025 Savaşan İHA Yarışması kapsamında geliştirilen TOROS SİHA insansız hava aracı yazılım ve yer istasyonu altyapısını içerir. Projede sabit kanatlı İHA’mız için otonom kalkış, uçuş, kilitlenme, kamikaze görevi ve otonom iniş görevleri ile yarışma sunucusu entegrasyonu hedeflenmektedir.
 
-🎯 **Projenin Amacı**
+## 🎯 **Projenin Amacı**
 
 Savaşan İHA yarışmasının hedefi; İHA’ların hava–hava ve hava–yer muharebe senaryolarında yüksek otonomi ile görev icra edebilmesini sağlamak, bu süreçte görüntü işleme, karar verme, planlama ve otonom uçuş kabiliyetlerini geliştirmektir.
 
@@ -20,7 +20,7 @@ Kullanıcı dostu bir Yer Kontrol İstasyonu (YKI) arayüzü
 
 geliştirilmektedir.
 
-🧩 **Görevler ve Yetenekler**
+### 🧩 **Görevler ve Yetenekler**
 
 Bu proje, yarışmanın iki ana görevini destekleyecek şekilde tasarlanmıştır:
 
