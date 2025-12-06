@@ -1,6 +1,6 @@
 # TOROS SİHA – Savaşan İHA 2026 Projesi
 
-Bu depo, TEKNOFEST 2025 Savaşan İHA Yarışması kapsamında geliştirilen TOROS SİHA insansız hava aracı yazılımını ve yer istasyonu altyapısını içerir. Projenin hedefi, sabit kanatlı İHA’mızın tamamen otonom şekilde kalkış yapabilmesi, havada rakip İHA’lara kilitlenebilmesi, yer hedefi üzerindeki QR koduna kamikaze dalışı gerçekleştirebilmesi ve güvenli şekilde otonom iniş yapabilmesidir. Tüm bu görevler sırasında yarışma sunucusu ile gerekli temel veri alışverişi de sağlanır.
+Bu depo, TEKNOFEST 2026 Savaşan İHA Yarışması kapsamında geliştirilen TOROS SİHA insansız hava aracı yazılımını ve yer istasyonu altyapısını içerir. Projenin hedefi, sabit kanatlı İHA’mızın tamamen otonom şekilde kalkış yapabilmesi, havada rakip İHA’lara kilitlenebilmesi, yer hedefi üzerindeki QR koduna kamikaze dalışı gerçekleştirebilmesi ve güvenli şekilde otonom iniş yapabilmesidir. Tüm bu görevler sırasında yarışma sunucusu ile gerekli temel veri alışverişi de sağlanır.
 
 ## 🎯 Projenin Amacı
 
