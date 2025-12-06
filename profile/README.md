@@ -1,97 +1,39 @@
 # TOROS SİHA – Savaşan İHA 2025 Projesi
 
-Bu depo, TEKNOFEST 2025 Savaşan İHA Yarışması kapsamında geliştirilen TOROS SİHA insansız hava aracı yazılım ve yer istasyonu altyapısını içerir. Projede sabit kanatlı İHA’mız için otonom kalkış, uçuş, kilitlenme, kamikaze görevi ve otonom iniş görevleri ile yarışma sunucusu entegrasyonu hedeflenmektedir.
+Bu depo, TEKNOFEST 2025 Savaşan İHA Yarışması kapsamında geliştirilen TOROS SİHA insansız hava aracı yazılımını ve yer istasyonu altyapısını içerir. Projenin hedefi, sabit kanatlı İHA’mızın tamamen otonom şekilde kalkış yapabilmesi, havada rakip İHA’lara kilitlenebilmesi, yer hedefi üzerindeki QR koduna kamikaze dalışı gerçekleştirebilmesi ve güvenli şekilde otonom iniş yapabilmesidir. Tüm bu görevler sırasında yarışma sunucusu ile gerekli temel veri alışverişi de sağlanır.
 
-## 🎯 **Projenin Amacı**
+## 🎯 Projenin Amacı
 
-Savaşan İHA yarışmasının hedefi; İHA’ların hava–hava ve hava–yer muharebe senaryolarında yüksek otonomi ile görev icra edebilmesini sağlamak, bu süreçte görüntü işleme, karar verme, planlama ve otonom uçuş kabiliyetlerini geliştirmektir.
+Savaşan İHA yarışması; hava–hava ve hava–yer muharebe senaryolarını kontrollü bir ortamda simüle ederek, yüksek otonomiye sahip İHA’lar geliştirilmesini hedefler. Bu kapsamda TOROS SİHA projesi, görüntü işleme, hedefe kilitlenme, görev planlama, otonom uçuş ve yer istasyonu arayüzü gibi bileşenlerin tamamını uçtan uca tek bir sistemde birleştirmeyi amaçlar.
 
-**TOROS SİHA projesinde:**
+Proje kapsamında havadaki diğer İHA’lara görüntü tabanlı otonom kilitlenme, yarışma alanındaki sabit QR hedefe kamikaze kilitlenmesi, hava savunma sistemi (HSS) bölgelerinden kaçınma ve yarışma sunucusu ile haberleşme yetenekleri geliştirilmektedir. Tüm bu süreçler, operatörün durumu net şekilde takip edebileceği kullanıcı dostu bir Yer Kontrol İstasyonu (YKI) arayüzü üzerinden yönetilir.
 
-Havadaki diğer İHA’lara görüntü tabanlı otonom kilitlenme
+## 🧩 Görevler ve Yetenekler
 
-Yarışma alanındaki QR kod tabanlı yer hedefine otonom kamikaze kilitlenmesi
+### Savaşan İHA Görevi
 
-Yarışma sunucusuna anlık telemetri, kilitlenme ve kamikaze verisi gönderimi
+Savaşan görevinde İHA, burnuna sabitlenmiş bir kameradan aldığı görüntü ile rakip İHA’ları tespit eder ve belirli bir dikdörtgen alan içerisinde belirli bir süre boyunca tutarak “kilitlenme/vuruş” gerçekleşmesini sağlar. Bu sırada İHA; otonom kalkış, rota takibi ve otonom iniş görevlerini de yerine getirir.
 
-Hava savunma sistemi (HSS) bölgelerinden kaçınma için akıllı görev planlama ve kaçınma algoritmaları
+Görüntü işleme modülü, rakip hava aracının görüntüde yeterli alan kaplamasını takip eder ve kilitlenmenin geçerli sayılması için gerekli süre ve alan koşullarını gözetir. Geçerli bir kilitlenme gerçekleştiğinde bu olay hem uçuş kaydına hem de yarışma sunucusuna raporlanır; eş zamanlı video kaydıyla hakem değerlendirmesi desteklenir.
 
-Kullanıcı dostu bir Yer Kontrol İstasyonu (YKI) arayüzü
+### Kamikaze İHA Görevi
 
-geliştirilmektedir.
+Kamikaze görevinde İHA, otonom kalkış ve seyir sonrasında yarışma alanındaki sabit QR hedefinin bulunduğu koordinasyona gider. Hedefe yaklaşırken kamera görüntüsü üzerinden QR kodu tespit eder, içeriğini okur ve dalış sürecini video ile kaydeder. QR içeriği ve dalış zamanı, görev tamamlandıktan sonra yarışma sunucusuna bildirilir.
 
-### 🧩 **Görevler ve Yetenekler**
+Bu görevde amaç, uçuş zarfı (irtifa ve sınır kuralları) içinde kalırken doğru zamanda dalışa girip QR kodunu güvenilir şekilde okuyabilecek bir yaklaşma profili oluşturmaktır. Kamikaze dalışı sonrasında güvenli bir otonom inişle görev sonlandırılır.
 
-Bu proje, yarışmanın iki ana görevini destekleyecek şekilde tasarlanmıştır:
+### Hava Savunma Sistemi (HSS) ve Görev Planlama
 
-**Savaşan İHA Görevi**
+Yarışma senaryosunda belirli zamanlarda aktifleştirilen HSS ve sinyal karıştırma bölgeleri, sanal “uçuşa yasaklı” alanlar oluşturur. TOROS SİHA yazılımında, bu bölgelerin koordinatlarını yarışma sunucusundan alıp güncel uçuş planına entegre eden ve İHA’nın bu alanlara girmesini engelleyen kaçınma algoritmaları tasarlanmaktadır. Böylece İHA hem Savaşan hem Kamikaze görevlerini bu kısıtlar altında yerine getirebilecek şekilde rota güncellemesi yapar.
 
-Otonom kalkış / otonom uçuş / otonom kilitlenme (hava aracı) / otonom iniş
+## 🌐 Yarışma Sunucusu ile Haberleşme (Özet)
 
-Rakip İHA’nın görüntüde belirli bir dikdörtgen içinde en az 4 saniye tutulmasıyla kilitlenme/vuruş tespiti
+TOROS SİHA, TEKNOFEST Savaşan İHA Haberleşme Dokümanı ile uyumlu, hafif bir HTTP tabanlı haberleşme katmanı içerir. Bu katmanın temel işi, uçuşun durumunu yarışma sunucusuna bildirmek ve senaryoya ait kritik bilgileri almaktır.
 
-Hedefin görüntüde en az %5’lik alanı kaplamasını takip eden görüntü işleme algoritmaları
+## 👥 TOROS SİHA Takımı
 
-Kilitlenme anında hem yarışma sunucusuna paket gönderimi hem de video kaydı
-
-**Kamikaze İHA Görevi**
-
-Otonom kalkış / otonom uçuş / yer hedefine otonom kilitlenme (QR kod) / otonom iniş
-
-Yarışma alanındaki sabit QR hedefinin tespit edilmesi ve içeriğindeki metnin sunucuya iletilmesi
-
-Hedefe dalış sırasında irtifa ve sınır kurallarına uyum, kamikaze sürecinin video ile belgelenmesi
-
-Bunlara ek olarak sistem, yarışma sunucusu üzerinden sağlanan hava savunma sistemi ve sinyal karıştırma bölgeleri bilgilerini alıp bu bölgelerden kaçınarak uçuş rotasını dinamik olarak güncelleyebilmek üzere tasarlanmıştır.
-
-**Yarışma Sunucusu ile Haberleşme**
-
-Yarışma sırasında tüm takımlar, telemetri gönderimi ve diğer takımların konum bilgilerini alabilmek için yarışma sunucusu ile JSON tabanlı HTTP API üzerinden haberleşmek zorundadır.
-
-Sunucu tarafında kullanılan temel uç noktalar:
-
-*POST /api/giris*
-
-Amaç: Takım kullanıcı adı ve şifresi ile oturum açmak
-
-Doğru girişte takım numarası döner; hatalı girişte 400 kodu
-
-*GET /api/sunucusaati*
-
-Amaç: Sunucu saatini almak ve uçuş bilgisayarının saatini bu saate göre kalibre etmek
-
-*POST /api/telemetri_gonder*
-
-Amaç: İHA enlem, boylam, irtifa, dikilme, yönelme, yatış, hız, batarya, otonom bayrağı ve kilitlenme durumunu içeren telemetriyi saniyede 1–5 Hz arası sunucuya göndermek
-
-Cevapta: Sunucu saati + diğer takımların konumları ve zaman farkı bilgileri gelir
-
-*POST /api/kilitlenme_bilgisi*
-
-Amaç: Başarılı kilitlenme sonrası, kilitlenme bitiş zamanı ve otonom/manuel kilitlenme bilgisini sunucuya iletmek
-
-*POST /api/kamikaze_bilgisi*
-
-Amaç: Kamikaze görevi bitiminde, kamikaze başlangıç/bitiş zamanları ve okunan QR metnini sunucuya bildirmek
-
-*GET /api/qr_koordinati*
-
-Amaç: Kamikaze görevi için kullanılacak QR hedefinin enlem/boylam bilgilerini almak
-
-*GET /api/hss_koordinatlari*
-
-Amaç: Hava Savunma Sistemi (HSS) koordinatları ve yarıçaplarını almak; aktif HSS bölgelerinden kaçınmak için kullanılır
-
-Bu uç noktalar için örnek JSON gövdeleri ve cevaplar, yarışma Haberleşme Dökümanında verilmiştir; projedeki onboard/comm veya benzer modül bu formatı birebir uygulamalıdır.
-
-## TOROS SİHA Takımı
-
-Üniversite: Akdeniz Üniversitesi
-
-Danışman: Dr.Ögr.Yalçın Albayrak
-
-Takım Kaptanı: İbrahim Buğra Tekinli
-
-Yazılım Kaptanı: Tayfun Akay Çınar
-
-Mekanik Kaptanı: Khaled Balali
+- **Üniversite:** Akdeniz Üniversitesi  
+- **Danışman:** Dr. Öğr. Üyesi Yalçın Albayrak  
+- **Takım Kaptanı:** İbrahim Buğra Tekinli  
+- **Yazılım Kaptanı:** Tayfun Akay Çınar  
+- **Mekanik Kaptanı:** Khaled Balali  
