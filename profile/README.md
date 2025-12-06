@@ -26,7 +26,7 @@ Bu görevde amaç, uçuş zarfı (irtifa ve sınır kuralları) içinde kalırke
 
 Yarışma senaryosunda belirli zamanlarda aktifleştirilen HSS ve sinyal karıştırma bölgeleri, sanal “uçuşa yasaklı” alanlar oluşturur. TOROS SİHA yazılımında, bu bölgelerin koordinatlarını yarışma sunucusundan alıp güncel uçuş planına entegre eden ve İHA’nın bu alanlara girmesini engelleyen kaçınma algoritmaları tasarlanmaktadır. Böylece İHA hem Savaşan hem Kamikaze görevlerini bu kısıtlar altında yerine getirebilecek şekilde rota güncellemesi yapar.
 
-## 🌐 Yarışma Sunucusu ile Haberleşme (Özet)
+## 🌐 Yarışma Sunucusu ile Haberleşme
 
 TOROS SİHA, TEKNOFEST Savaşan İHA Haberleşme Dokümanı ile uyumlu, hafif bir HTTP tabanlı haberleşme katmanı içerir. Bu katmanın temel işi, uçuşun durumunu yarışma sunucusuna bildirmek ve senaryoya ait kritik bilgileri almaktır.
 
